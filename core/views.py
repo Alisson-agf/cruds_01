@@ -9,7 +9,7 @@ def emprego_listar(request):
     }
     return render(request, 'cursos.html', contexto)
 
-def curso_cadastro(request):
+def emprego_cadastro(request):
     form = CursosForm(request.POST or None)
     if form.is_valid():
             form.save()
