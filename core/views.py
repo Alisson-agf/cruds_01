@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Emprego
+from .models import emprego
 from .forms import EmpregoForm
 
 def emprego_listar(request):
