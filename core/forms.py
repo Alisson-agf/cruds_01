@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from .models import Curso
+from .models import Emprego
 
 
-class CursosForm(ModelForm):
+class EmpregoForm(ModelForm):
     class Meta:
-           model = Curso
-           fields = ['titulo', 'vagas']
+           model = Emprego
+           fields = ['profissão', 'vagas']
