@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from .models import Curso
-from .forms import CursosForm
+from .models import Emprego
+from .forms import EmpregoForm
 
-def cursos_listar(request):
-    cursos = Curso.objects.all()
+def emprego_listar(request):
+    empregos = emprego.objects.all()
     contexto = {
-        'lista_cursos': cursos
+        'lista_cursos': emprego
     }
     return render(request, 'cursos.html', contexto)
 
@@ -13,7 +13,7 @@ def curso_cadastro(request):
     form = CursosForm(request.POST or None)
     if form.is_valid():
             form.save()
-            return redirect('cursos_listar')
+            return redirect('emprego_listar')
     contexto = {
         'form': form
     }

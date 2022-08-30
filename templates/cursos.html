@@ -11,7 +11,7 @@
 
     <p><a href="{% url 'curso_cadastro'%}">Enviar curriculo</a></p>
     
-    <p>Lista de Cursos Cadastrados</p>
+    <p>Enviar Curriculo</p>
     {% for curso in lista_cursos %}
         <p>{{curso.titulo}} -{{curso.vagas}} |
         <a href="{% url 'curso_editar' curso.id %}">EDITAR</a>
