@@ -5,7 +5,7 @@ from .forms import EmpregoForm
 def emprego_listar(request):
     empregos = emprego.objects.all()
     contexto = {
-        'lista_cursos': emprego
+        'emprego_cursos': emprego
     }
     return render(request, 'cursos.html', contexto)
 
@@ -20,13 +20,13 @@ def curso_cadastro(request):
     return render(request, 'curso_cadastro.html', contexto)
 
 
-def curso_editar(request, id):
-    curso = Curso.objects.get(pk=id)
+def emprego_editar(request, id):
+    emprego = Emprego.objects.get(pk=id)
     
-    form = CursosForm(request.POST or None, instance=curso)
+    form = EmpregoForm(request.POST or None, instance=emprego)
     if form.is_valid():
         form.save()
-        return redirect('cursos_listar')
+        return redirect('emprego_listar')
     
     contexto = {
         'form': form
@@ -34,7 +34,7 @@ def curso_editar(request, id):
 
     return render(request, 'curso_cadastro.html', contexto)
 
-def curso_remover(request, id):
-    curso = Curso.objects.get(pk=id)
-    curso.delete()
-    return redirect('cursos_listar')
+def emprego_remover(request, id):
+    emprego = Emprego.objects.get(pk=id)
+    emprego.delete()
+    return redirect('emprego_listar')
