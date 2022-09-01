@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import emprego
+from .models import Emprego
 from .forms import EmpregoForm
 
 def emprego_listar(request):
@@ -7,17 +7,17 @@ def emprego_listar(request):
     contexto = {
         'emprego_cursos': emprego
     }
-    return render(request, 'cursos.html', contexto)
+    return render(request, 'cad.html', contexto) 
 
 def emprego_cadastro(request):
-    form = CursosForm(request.POST or None)
+    form = EmpregoForm(request.POST or None)
     if form.is_valid():
             form.save()
             return redirect('emprego_listar')
     contexto = {
         'form': form
     }
-    return render(request, 'curso_cadastro.html', contexto)
+    return render(request, 'Cadastro_emprego.html', contexto)
 
 
 def emprego_editar(request, id):
@@ -32,7 +32,7 @@ def emprego_editar(request, id):
         'form': form
     }
 
-    return render(request, 'curso_cadastro.html', contexto)
+    return render(request, 'Cadastro_emprego.html', contexto) 
 
 def emprego_remover(request, id):
     emprego = Emprego.objects.get(pk=id)

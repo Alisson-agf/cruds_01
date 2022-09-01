@@ -5,4 +5,4 @@ from .models import Emprego
 class EmpregoForm(ModelForm):
     class Meta:
            model = Emprego
-           fields = ['titulo', 'vagas']
+           fields = ['identidade', 'especialidade']

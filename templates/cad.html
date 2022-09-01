@@ -9,15 +9,15 @@
 <body>
     <h1>Emprego</h1>
 
-    <p><a href="{% url 'curso_cadastro'%}">Enviar curriculo</a></p>
+    <p><a href="{% url 'Emprego_cadastro'%}">Enviar curriculo</a></p>
     
     <p>Enviar Curriculo</p>
-    {% for curso in lista_cursos %}
-        <p>{{curso.titulo}} -{{curso.vagas}} |
-        <a href="{% url 'curso_editar' curso.id %}">EDITAR</a>
-        <a href="{% url 'curso_remover' curso.id %}">DELETAR</a></p>
+    {% for emprego in listar_emprego %}
+        <p>{{emprego.identidade}} -{{emprego.especialidade}}|
+        <a href="{% url 'emprego_editar' emprego.id %}">EDITAR</a>
+        <a href="{% url 'emprego_remover' emprego.id %}">DELETAR</a></p>
     {% empty %}
-    <p>Nenhum curso cadastrado</p>
+    <p>Nenhum Emprego cadastrado</p>
     {% endfor %}
 
 </body>
