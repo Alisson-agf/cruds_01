@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Emprego
-from .forms import EmpregoForm
+
 
 def emprego_listar(request):
     empregos = emprego.objects.all()
