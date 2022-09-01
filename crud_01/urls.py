@@ -17,9 +17,30 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from core.views import 
+from core.views import professor_cadastro,professor_editar,professor_listar,professor_remover, home
+from core.views import informatica_cadastro, informatica_editar, informatica_listar, informatica_remover
+from core.views import motorista_cadastro, motorista_editar, motorista_listar, motorista_remover
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('',home, name='home'),
+    path('',professor_cadastro, name='professor_cadastro'),
+    path('',professor_editar, name='professor_editar'),
+    path('',professor_listar, name='professor_listar'),
+    path('',professor_remover, name='professor_remover'),
+
+    path('',informatica_cadastro, name='informatica_cadastro'),
+    path('',informatica_editar, name='informatica_editar'),
+    path('',informatica_listar, name='informatica_listar'),
+    path('',informatica_remover, name='informatica_remover'),
+
+    path('',motorista_cadastro, name='motorista_cadastro'),
+    path('',motorista_editar, name='motorista_editar'),
+    path('',motorista_listar, name='motorista_listar'),
+    path('',motorista_remover, name='motorista_remover'),
+
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
