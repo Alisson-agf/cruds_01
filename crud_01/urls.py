@@ -21,5 +21,12 @@ from core.views import
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(),
+    path(),
+    path(),
+    path(),
+    path(),
+    path(),
+    path(),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
