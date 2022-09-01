@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import emprego_listar, emprego_cadastro, emprego_editar, emprego_remover
+from django.conf import settings
+from django.conf.urls.static import static
+from core.views import 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('emprego/', emprego_listar, name='emprego_listar'),
-    path('emprego_cadastro/', emprego_cadastro, name='emprego_cadastro'),
-    path('emprego_editar/<int:id>/', emprego_editar, name='emprego_editar'),
-    path('emprego_remover/<int:id>/', emprego_remover, name='emprego_remover'),
-]
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

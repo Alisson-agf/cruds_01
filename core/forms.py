@@ -1,8 +1,19 @@
 from django.forms import ModelForm
-from .models import Emprego
+from .models import Professor, Motorista, Informatica
 
 
-class EmpregoForm(ModelForm):
+class ProfessorForm(ModelForm):
     class Meta:
-           model = Emprego
-           fields = ['identidade', 'especialidade']
+           model = Professor
+           fields = ['nome', 'email', 'dataNasci', 'foto']
+
+class MotoristaForm(ModelForm):
+    class Meta:
+           model = Motorista
+           fields = ['nome', 'email', 'dataNasci']
+
+class InformaticaForm(ModelForm):
+    class Meta:
+           model = Informatica
+           fields = ['nome', 'email', 'dataNasci']
+
