@@ -23,6 +23,13 @@ from core.views import motorista_cadastro, motorista_editar, motorista_listar, m
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(),
+    path(),
+    path(),
+    path(),
+    path(),
+    path(),
+    path(),
 
     path('',home, name='home'),
     path('',professor_cadastro, name='professor_cadastro'),
