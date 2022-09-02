@@ -25,18 +25,18 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('',home, name='home'),
-    path('',professor_cadastro, name='professor_cadastro'),
-    path('',professor_editar, name='professor_editar'),
+    path('professor/',professor_cadastro, name='professor_cadastro'),
+    path('professor/add/',professor_editar, name='professor_editar'),
     path('',professor_listar, name='professor_listar'),
     path('',professor_remover, name='professor_remover'),
 
-    path('',informatica_cadastro, name='informatica_cadastro'),
-    path('',informatica_editar, name='informatica_editar'),
+    path('informatica/',informatica_cadastro, name='informatica_cadastro'),
+    path('informaica/add/',informatica_editar, name='informatica_editar'),
     path('',informatica_listar, name='informatica_listar'),
     path('',informatica_remover, name='informatica_remover'),
 
-    path('',motorista_cadastro, name='motorista_cadastro'),
-    path('',motorista_editar, name='motorista_editar'),
+    path('motorista/',motorista_cadastro, name='motorista_cadastro'),
+    path('motorista/add/',motorista_editar, name='motorista_editar'),
     path('',motorista_listar, name='motorista_listar'),
     path('',motorista_remover, name='motorista_remover'),
 
