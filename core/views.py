@@ -3,7 +3,7 @@ from .models import Professor,Informatica, Motorista
 from .forms import ProfessorForm, InformaticaForm, MotoristaForm
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'pagina_inicial.html')
 
 def professor_listar(request):
     professor = Professor.objects.all()

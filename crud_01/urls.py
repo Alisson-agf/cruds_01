@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from core import views
 from core.views import professor_cadastro,professor_editar,professor_listar,professor_remover, home
 from core.views import informatica_cadastro, informatica_editar, informatica_listar, informatica_remover
 from core.views import motorista_cadastro, motorista_editar, motorista_listar, motorista_remover
@@ -24,21 +25,21 @@ from core.views import motorista_cadastro, motorista_editar, motorista_listar, m
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('',home, name='home'),
-    path('professor/',professor_cadastro, name='professor_cadastro'),
-    path('professor/add/',professor_editar, name='professor_editar'),
-    path('',professor_listar, name='professor_listar'),
-    path('',professor_remover, name='professor_remover'),
+    path('', home, name='home'),
+    path('professor_cadastro/',professor_cadastro, name='professor_cadastro'),
+    path('professor_editar/',professor_editar, name='professor_editar'),
+    path('professor_listar/',professor_listar, name='professor_listar'),
+    path('professor_remover/',professor_remover, name='professor_remover'),
 
-    path('informatica/',informatica_cadastro, name='informatica_cadastro'),
-    path('informaica/add/',informatica_editar, name='informatica_editar'),
-    path('',informatica_listar, name='informatica_listar'),
-    path('',informatica_remover, name='informatica_remover'),
+    path('informatica_cadastro/',informatica_cadastro, name='informatica_cadastro'),
+    path('informaica_editar/',informatica_editar, name='informatica_editar'),
+    path('informatica_listar/',informatica_listar, name='informatica_listar'),
+    path('informatica_remover/',informatica_remover, name='informatica_remover'),
 
-    path('motorista/',motorista_cadastro, name='motorista_cadastro'),
-    path('motorista/add/',motorista_editar, name='motorista_editar'),
-    path('',motorista_listar, name='motorista_listar'),
-    path('',motorista_remover, name='motorista_remover'),
+    path('motorista_cadastro/',motorista_cadastro, name='motorista_cadastro'),
+    path('motorista_editar/',motorista_editar, name='motorista_editar'),
+    path('professor_listar/',motorista_listar, name='motorista_listar'),
+    path('professor_remover/',motorista_remover, name='motorista_remover'),
 
 
 
