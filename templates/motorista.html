@@ -11,19 +11,38 @@
 
     <h1>Motorista</h1>
 
-    <div>
-      <table class="table table-dark table-hover">
+    <div class="row m-5 text-center">
+      <h1>Motorista</h1>
+      <p><a href="{% url 'home'%}">Voltar a pagina Inicial</a></p>
+    </div>
+    
+    <div class="row m-5">
+      <p><a href="{% url 'motorista_cadastro'%}">Cadastrar novo usuario</a></p>
+  
+      {% for motorista in listar_motorista %}
+      <table class="table table-striped">
+      <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Idade</th>
-          <th scope="col">E-mail</th>
+          <th scope="col-2">Nome</th>
+          <th scope="col-2">Data de Nascimento</th>
+          <th scope="col-2">Email</th>
+          <th scope="col-3">Ações</th>
         </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{motorista.nome}}</td>
+          <td>{{motorista.dataNasci}}</td>
+          <td>{{motorista.email}}</td>
+          <td><a href="{% url 'motorista_editar' motorista.id %}">EDITAR</a>
+              <a href="{% url 'motorista_remover' motorista.id %}">DELETAR</a></p>
+        </tr>
+      </tbody>
       </table>
-
-      <a href="pagina_inicial.html"  class="btn btn-outline-dark">Página Inicial</a>
-        <a href="informatica_add.html"  class="btn btn-outline-dark">Editar</a>
-          <a href=""  class="btn btn-outline-dark">Deletar</a>
+    
+    {% empty %}
+    <p>Nenhum comentario cadastrado</p>
+    {% endfor %}
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

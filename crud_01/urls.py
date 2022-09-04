@@ -32,14 +32,14 @@ urlpatterns = [
     path('professor_remover/',professor_remover, name='professor_remover'),
 
     path('informatica_cadastro/',informatica_cadastro, name='informatica_cadastro'),
-    path('informaica_editar/',informatica_editar, name='informatica_editar'),
+    path('informatica_editar/',informatica_editar, name='informatica_editar'),
     path('informatica_listar/',informatica_listar, name='informatica_listar'),
     path('informatica_remover/',informatica_remover, name='informatica_remover'),
 
     path('motorista_cadastro/',motorista_cadastro, name='motorista_cadastro'),
     path('motorista_editar/',motorista_editar, name='motorista_editar'),
-    path('professor_listar/',motorista_listar, name='motorista_listar'),
-    path('professor_remover/',motorista_remover, name='motorista_remover'),
+    path('motorista_listar/',motorista_listar, name='motorista_listar'),
+    path('motorista_remover/',motorista_remover, name='motorista_remover'),
 
 
 

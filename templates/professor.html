@@ -1,31 +1,56 @@
 <!doctype html>
 <html lang="en">{% load widget_tweaks %}
-  {% load static %}
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Professor</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  </head>
-  <body>
+{% load static %}
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Professor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <h1>Professor</h1>
+
+  <div class="row m-5 text-center">
     <h1>Professor</h1>
+    <p><a href="{% url 'home'%}">Voltar a pagina Inicial</a></p>
+  </div>
 
-    <div>
-      <table class="table table-dark table-hover">
+  <div class="row m-5">
+    <p><a href="{% url 'professor_cadastro'%}">Cadastrar novo usuario</a></p>
+
+    {% for professor in professor_listar %}
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Idade</th>
-          <th scope="col">E-mail</th>
+          <th scope="col-2">Nome</th>
+          <th scope="col-2">Data de Nascimento</th>
+          <th scope="col-2">Email</th>
+          <th scope="col-3">Ações</th>
         </tr>
-      </table>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{professor.nome}}</td>
+          <td>{{professor.dataNasci}}</td>
+          <td>{{professor.email}}</td>
+          <td><a href="{% url 'professor_editar' professor.id %}">EDITAR</a>
+            <a href="{% url 'professor_remover' professor.id %}">DELETAR</a></p>
+        </tr>
+      </tbody>
+    </table>
 
-      <a href="pagina_inicial.html"  class="btn btn-outline-dark">Página Inicial</a>
-        <a href="informatica_add.html"  class="btn btn-outline-dark">Editar</a>
-          <a href=""  class="btn btn-outline-dark">Deletar</a>
-    </div>
+    {% empty %}
+    <p>Nenhum comentario cadastrado</p>
+    {% endfor %}
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

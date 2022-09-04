@@ -38,10 +38,21 @@
         {% render_field form.dataNasci placeholder="00/00/0000" class="form-control"%}
             
       </div>
-      <a href="{%url 'home'%}" class="btn btn-outline-dark">Voltar</a>
-      <div class=" col-12 mb-3">
-        <button type="submit" class="btn btn-outline-dark">Salvar</button>
+      <p>
+        <b><label>Anexe a sua CNH:</label></b> <br>
+        <input type="file" name="foto"> 
+    </p>
+
+    <p>
+        <input type="submit" value="Enviar">
+
+    </p>
+      <div class="col-sm-6">
+        <a href="{%url 'home'%}" class="btn btn-outline-dark">Voltar</a>
       </div>
+        <div class="col-sm-6">
+          <button type="submit" class="btn btn-success">Salvar</button>
+        </div>
     </form>
 
 
